@@ -1,0 +1,1 @@
+# GPDK090_design_rule
