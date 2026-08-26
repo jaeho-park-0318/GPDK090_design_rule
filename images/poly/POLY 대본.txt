@@ -1,0 +1,67 @@
+-POLY.W.1 Minimum 1.2V N-channel gate length 0.1um
+-POLY.W.2 Minimum 1.2V P-channel gate length. 0.1um
+해당 규칙들은 1.2V N/PMOS의 최소 Gate Length를 제한하는 규칙입니다. Gate Length가 지나치게 짧아지면 Short Channel Effect로 인해 문턱전압 변화와 누설전류 증가가 발생하며, 소자의 특성이 설계값과 달라질 수 있습니다. 또한 강한 전기장으로 인해 소자의 신뢰성이 저하될 수 있으므로, 공정에서 안정적인 성능과 수율을 확보하기 위해 최소 Gate Length를 Design Rule로 규정하고 있습니다.
+
+
+-POLY.W.3 Minimum 2.5V N-channel gate length. 0.28um
+-POLY.W.4Minimum 2.5V P-channel gate length. 0.28um
+해당 규칙들은 2.5V N/PMOS의 최소 Gate Length를 제한하는 규칙입니다. 2.5V 소자는 1.2V 소자보다 높은 전압에서 동작하므로 Gate Oxide와 채널에 더 강한 전기장이 형성됩니다. Gate Length가 너무 짧으면 높은 에너지를 얻은 전자가 산화막 내부로 주입되는 Hot Carrier Injection(HCI) 현상이 발생하여 문턱전압 변화와 구동전류 감소를 유발할 수 있습니다. 또한 강한 전기장은 Gate Oxide 내부에 결함을 축적시켜 **산화막 열화(Oxide Degradation)**와 누설전류 증가, 소자 수명 감소로 이어질 수 있으므로, 공정에서는 이를 방지하기 위해 최소 Gate Length를 규정하고 있습니다.
+
+
+-POLY.W.5 Minimum Poly interconnect width.0.1um
+이 규칙은 Poly Interconnect의 최소 폭을 0.1 µm 이상으로 유지하도록 제한하는 규칙입니다. Poly 배선의 폭이 너무 좁으면 포토리소그래피와 식각 공정에서 패턴이 제대로 형성되지 않거나 끊어질 가능성이 커집니다. 또한 단면적이 작아져 배선 저항이 증가하고 IR Drop 및 신호 지연이 발생할 수 있습니다. 따라서 공정 재현성과 전기적 신뢰성을 확보하기 위해 최소 Poly 폭을 0.1 µm로 규정하고 있습니다
+
+
+-POLY.SP.1 Minimum Poly resistor space 0.6um
+이 규칙은 Poly Resistor 사이의 최소 간격을 0.6 µm 이상 확보하도록 하는 규칙입니다. Poly 저항은 일반 Poly 배선보다 저항 특성이 중요하기 때문에, 간격이 너무 좁으면 포토 공정과 식각 과정에서 패턴 간 간섭이 발생하거나 저항값의 오차가 커질 수 있습니다. 또한 인접한 저항 간의 기생 커플링과 공정 편차를 줄여 설계한 저항값을 안정적으로 구현하기 위해 최소 간격을 0.6 µm로 규정하고 있습니다
+
+
+-POLY.SP.2 Minimum gate space 0.12um
+이 규칙은 인접한 Gate 사이의 최소 간격을 0.12 µm 이상 유지하도록 하는 규칙입니다. Gate 간격이 너무 좁으면 포토리소그래피의 해상도 한계와 식각 공정의 오차로 인해 두 Gate가 의도치 않게 연결되거나 패턴 변형이 발생할 수 있습니다. 또한 Gate 간의 기생 커패시턴스가 증가하여 회로 성능에 영향을 줄 수 있으므로, 공정 재현성과 소자의 전기적 특성을 안정적으로 확보하기 위해 최소 간격을 0.12 µm로 규정하고 있습니다.
+
+
+-POLY.SP.3 Minimum Poly interconnect space 0.12um
+이 규칙은 Poly Interconnect 간의 최소 간격을 0.12 µm 이상 유지하도록 하는 규칙입니다. Poly 배선 간격이 너무 좁으면 포토리소그래피와 식각 공정에서 패턴이 서로 붙는 브리징(Bridging) 현상이나 패턴 변형이 발생할 수 있습니다. 또한 인접한 Poly 배선 사이의 기생 커패시턴스가 증가하여 신호 지연과 간섭이 발생할 수 있으므로, 공정 수율과 전기적 신뢰성을 확보하기 위해 최소 간격을 0.12 µm로 규정하고 있습니다
+
+
+-POLY.E.1 Minimum N-channel gate extension beyond Active Area 0.18um
+-POLY.E.2 Minimum P-channel gate extension beyond Active Area 0.18um
+이 규칙은 NMOS와 PMOS 모두에서 Gate Poly가 Active Area 밖으로 최소 0.18 µm 이상 연장되도록 하는 규칙입니다. Gate Contact는 채널 위가 아닌 Poly Extension 영역에 형성되므로, 충분한 연장 길이가 있어야 Contact를 안전하게 배치할 수 있습니다. 또한 포토 공정의 Overlay 오차가 발생하더라도 Gate가 채널을 완전히 덮어 설계된 채널 길이를 유지할 수 있으며, Gate Oxide 손상과 소자 특성 변화를 방지하여 공정 신뢰성을 확보하기 위해 이 규칙을 적용합니다
+
+
+-POLY.SE.1 Minimum Poly interconnect to unrelated Active Area space 0.1um
+-POLY.SE.2 Minimum Poly interconnect to related Active Area space 0.1um
+이 규칙은 Poly Interconnect와 Active Area 사이의 최소 간격을 0.1 µm 이상 유지하도록 하는 규칙입니다. 여기서 Unrelated Active Area는 해당 Poly와 전기적으로 관계없는 Active 영역을, Related Active Area는 동일한 소자나 동일한 Net과 연결된 Active 영역을 의미합니다. 간격이 너무 좁으면 포토리소그래피 및 식각 공정에서 Poly와 Active가 의도치 않게 겹치거나 브리징되어 불필요한 MOS 채널이 형성될 수 있습니다. 따라서 공정 오차를 고려하여 의도하지 않은 소자 생성과 단락을 방지하고, 안정적인 소자 특성을 확보하기 위해 최소 간격을 규정하고 있습니다.
+
+
+-POLY.E.3 Minimum Active Area (source/drain) to gate enclosure 0.2um
+이 규칙은 Gate를 기준으로 Source/Drain Active Area가 최소 0.2 µm 이상 충분히 둘러싸도록(Enclosure) 하는 규칙입니다. Source와 Drain 영역이 너무 짧으면 포토 공정의 정렬 오차(Overlay Error)나 식각 오차로 인해 Gate와 Active의 겹침이 부족해져 채널이 정상적으로 형성되지 않거나 Source/Drain 저항이 증가할 수 있습니다. 따라서 공정 오차를 고려하여 Gate와 Source/Drain의 정렬을 안정적으로 유지하고, 소자의 전기적 특성과 제조 수율을 확보하기 위해 최소 Enclosure를 규정하고 있습니다.
+
+
+-POLY.W.6 Minimum bent Poly width 0.18um
+이 규칙은 꺾이는(Bent) Poly 배선의 최소 폭을 0.18 µm 이상 유지하도록 하는 규칙입니다. Poly가 꺾이는 부분은 포토리소그래피와 식각 공정에서 모서리가 깎이는(Corner Rounding) 현상이 발생하기 쉬워, 실제 폭이 설계값보다 더 좁아질 수 있습니다. 폭이 지나치게 좁아지면 배선 저항 증가나 단선(Open) 위험이 커지므로, 공정 오차를 고려하여 꺾이는 부분에는 일반 Poly보다 더 큰 최소 폭을 적용해 공정 신뢰성과 배선의 안정성을 확보합니다
+
+
+-POLY.SP.4 Minimum bent Poly space 0.22um
+이 규칙은 꺾이는(Bent) Poly 배선 사이의 최소 간격을 0.22 µm 이상 유지하도록 하는 규칙입니다. Poly의 모서리 부분은 포토리소그래피와 식각 공정에서 Corner Rounding과 패턴 왜곡이 발생하기 쉬워, 직선 구간보다 실제 간격이 더 좁아질 수 있습니다. 간격이 부족하면 인접한 Poly가 의도치 않게 연결되는 브리징(Bridging)이나 단락이 발생할 위험이 커집니다. 따라서 공정 오차를 고려하여 꺾이는 부분에는 일반 Poly보다 더 큰 최소 간격을 적용해 제조 수율과 전기적 신뢰성을 확보합니다
+
+
+-POLY.X.1 Bent gate is not allowed.
+이 규칙은 Gate Poly를 꺾인(Bent) 형태로 설계하는 것을 금지하는 규칙입니다. Gate가 꺾이면 채널의 폭과 길이가 위치에 따라 달라져 전류 분포가 불균일해지고, 문턱전압과 구동 특성이 설계값에서 벗어날 수 있습니다. 또한 모서리에서는 전기장이 집중되어 신뢰성이 저하될 가능성이 있으며, 포토리소그래피와 식각 공정에서도 패턴 왜곡이 발생하기 쉽습니다. 따라서 균일한 채널 형성과 안정적인 소자 특성을 확보하기 위해 Gate는 반드시 직선 형태로 설계하도록 규정하고 있습니다
+
+
+-POLY.X.2 Bent Poly resistor is not allowed.
+이 규칙은 Poly Resistor를 꺾인(Bent) 형태로 설계하는 것을 금지하는 규칙입니다. Poly 저항은 저항값의 정확도가 매우 중요하지만, 꺾이는 부분에서는 전류가 모서리로 집중하는 Current Crowding 현상과 공정에 의한 폭 변화가 발생하여 저항값이 설계값과 달라질 수 있습니다. 또한 포토리소그래피와 식각 과정에서 패턴 왜곡이 발생하기 쉬워 저항의 선형성과 매칭 특성이 저하될 수 있습니다. 따라서 정확한 저항 특성과 공정 신뢰성을 확보하기 위해 Poly Resistor는 직선 형태로 설계하도록 규정하고 있습니다
+
+
+-POLY.D.1 Maximum Poly density across full chip 50%
+이 규칙은 칩 전체에서 Poly가 차지하는 면적의 비율(Density Ratio) 을 50% 이하로 제한하는 규칙입니다. 여기서 Poly Density Ratio는 전체 칩 면적 대비 Poly 면적의 비율을 의미합니다. 이 비율이 너무 높으면 식각과 CMP(Chemical Mechanical Planarization) 공정에서 제거 속도가 불균일해져 표면 평탄도가 저하되고, Gate 선폭과 Poly 저항값에 공정 편차가 발생할 수 있습니다. 따라서 공정의 균일성과 소자의 전기적 특성, 그리고 제조 수율을 확보하기 위해 최대 Poly Density Ratio를 50%로 규정하고 있습니다
+
+
+-POLY.SE.3 Maximum Poly segment length (width < 0.14) between two contacts 25um
+이 규칙은 폭이 0.14 µm 미만인 Poly 배선이 두 Contact 사이에서 25 µm를 초과하지 않도록 제한하는 규칙입니다. 폭이 좁은 Poly는 단위 길이당 저항이 매우 크기 때문에, 길이가 길어질수록 Length-to-Width Ratio가 증가하여 배선 저항과 IR Drop, 신호 지연이 크게 증가합니다. 또한 긴 Poly 구간은 공정 편차의 영향을 더 크게 받아 저항값의 오차가 커질 수 있습니다. 따라서 배선의 전기적 특성과 공정 신뢰성을 확보하기 위해 최대 Poly Segment Length를 25 µm로 제한하고 있습니다
+
+
+-POLY.A.1 Minimum area for Poly interconnect 0.1um
+이 규칙은 Poly Interconnect의 최소 면적을 0.1 µm² 이상 확보하도록 하는 규칙입니다. Poly의 면적이 너무 작으면 포토리소그래피와 식각 공정에서 패턴이 제대로 형성되지 않거나 과도하게 식각되어 사라질 가능성이 있습니다. 또한 작은 Poly 패턴은 공정 편차에 매우 민감하여 단선(Open)이나 저항값 변화가 발생할 수 있습니다. 따라서 공정 재현성과 배선의 전기적 신뢰성을 확보하기 위해 Poly Interconnect의 최소 면적을 0.1 µm²로 규정하고 있습니다
+
